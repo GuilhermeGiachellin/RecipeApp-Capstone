@@ -1,0 +1,28 @@
+<header>
+    <nav>
+        <ul>
+            <% unless user_signed_in? %>
+                <li>
+                    <%= link_to "Log in", new_user_session_path, class: "link text-success" %>
+                </li>
+            <% end %>
+            <% if user_signed_in? %>
+            <li>
+                Foods
+            </li>
+            <li>
+                Recipes
+            </li>
+            <li>
+                Public Recipes
+            </li>
+                <li>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "link text-success" %>
+                </li>
+                <li>
+                    <button class="btn btn-outline-success">Hello <%= current_user.name %></button>
+                </li>
+                <% end %>
+        </ul>
+    </nav>
+</header>
