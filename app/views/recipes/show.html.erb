@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 <section>
-  <h2><%= @recipe.name %></h2>
+  <h2><%= @recipe.name %></h2> | 
+
+  <%= link_to 'Edit', edit_recipe_path(@recipe.id) %> |
+  <%= link_to 'Remove', recipe_path(@recipe.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  
   <p>
     <strong>Preparation time:</strong>
     <%= @recipe.preparation_time %>
@@ -18,7 +22,7 @@
     <%= @recipe.public %>
   </p>
   <%= link_to 'Generate shopping list', recipes_path %>
-  <%= link_to 'Add ingredient', recipes_path %>
+  <%= link_to 'Add ingredient',   new_recipe_recipe_food_path(@recipe) %>
 
   <br>
 
@@ -29,18 +33,15 @@
       <th>Value</th>
       <th>Action</th>
     </tr>
-    <% @foods.each do |food| %>
+    <% @foods.each do |recipe_food| %>
       <tr>
-        <td><%= food.name %></td>
-        <td>Idk</td>
-        <td>Idk</td>
-        <td>Idk</td>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %> <%= recipe_food.food.measurament_unit %></td>
+        <td><%= recipe_food.food.price %></td>
+        <td><%= link_to 'Modify', edit_recipe_recipe_food_path(params[:id],recipe_food) %> <%= link_to 'Remove', recipe_recipe_food_path(params[:id],recipe_food), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-
-
-    
+    <% end %>
   </table>
-
 </section>
 
 

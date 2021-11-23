@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :preparation_time %>
-    <%= form.text_field :preparation_time %>
+    <%= form.number_field :preparation_time, step: :any %>
   </div>
 
   <div class="field">
     <%= form.label :cooking_time %>
-    <%= form.text_field :cooking_time %>
+    <%= form.number_field :cooking_time, step: :any %>
   </div>
 
   <div class="field">
@@ -34,11 +34,6 @@
   <div class="field">
     <%= form.label :public %>
     <%= form.check_box :public %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">

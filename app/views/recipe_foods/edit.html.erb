@@ -1,0 +1,6 @@
+<h1>Editing Recipe Food</h1>
+
+<%= render 'form', recipe_food: @recipe_food %>
+
+<%= link_to 'Show', recipe_recipe_food_path(params[:recipe_id],@recipe_food) %> |
+<%= link_to 'Back', :back %>
