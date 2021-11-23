@@ -1,34 +1,48 @@
 <p id="notice"><%= notice %></p>
+<section>
+  <h2><%= @recipe.name %></h2>
+  <p>
+    <strong>Preparation time:</strong>
+    <%= @recipe.preparation_time %>
+  </p>
+  <p>
+    <strong>Cooking time:</strong>
+    <%= @recipe.cooking_time %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @recipe.description %>
+  </p>
+  <p>
+    <strong>Public:</strong>
+    <%= @recipe.public %>
+  </p>
+  <%= link_to 'Generate shopping list', recipes_path %>
+  <%= link_to 'Add ingredient', recipes_path %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
+  <br>
 
-<p>
-  <strong>Preparation time:</strong>
-  <%= @recipe.preparation_time %>
-</p>
+  <table>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Action</th>
+    </tr>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+        <td></td>
+      </tr>
 
-<p>
-  <strong>Cooking time:</strong>
-  <%= @recipe.cooking_time %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
+    
+  </table>
 
-<p>
-  <strong>Public:</strong>
-  <%= @recipe.public %>
-</p>
+</section>
 
-<p>
-  <strong>User:</strong>
-  <%= @recipe.user_id %>
-</p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

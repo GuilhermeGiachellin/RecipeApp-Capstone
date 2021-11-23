@@ -3,7 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'recipes#public_recipes'
-  # devise_scope :user do
-  #   root 'devise/sessions#new'
-  # end
+  resources :recipe, :except => [:update]
 end
