@@ -1,11 +1,15 @@
-<h1>TEST PUBLIC RECIPES</h1>
-<ul>
+<h1>Public Recipes</h1>
+<ul >
 <% @recipe.each do |r| %>
 <%= link_to r do %>
-    <li>
-    <%= r.name %>
+    <li class="public_list">
+    <div>
+    <%= r.name %>    
+    </div>
+     <div>
     <%= r.preparation_time %>
     <%= r.cooking_time %>
+    </div>
     </li>
     <% end %>
 <% end %>
