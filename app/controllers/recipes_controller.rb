@@ -16,6 +16,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def public_recipes
+    @recipe = Recipe.all.where(public: true).order(created_at: :desc)
+  end
+
   # GET /recipes/1/edit
   def edit; end
 
