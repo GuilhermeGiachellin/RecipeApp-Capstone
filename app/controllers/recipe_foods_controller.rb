@@ -1,6 +1,6 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[ show edit update destroy ]
-  before_action :set_recipe, only: %i[new edit update destroy]
+  before_action :set_recipe, only: %i[new edit create update destroy]
   before_action :set_foods, only: %i[new edit]
 
   # GET /recipe_foods or /recipe_foods.json
@@ -70,11 +70,11 @@ class RecipeFoodsController < ApplicationController
     end
 
     def set_foods
-      @foods = Food.where(user_id: current_user.id)
+      @foods = Food.all
     end
 
     # Only allow a list of trusted parameters through.
     def recipe_food_params
-      params.require(:recipe_food).permit(:quantity, :recipe_id, :food_id)
+      params.require(:recipe_food).permit(:quantity, :food_id)
     end
 end

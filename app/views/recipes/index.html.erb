@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 <section>
   <h1>Recipes</h1>
+  <%= link_to 'New Recipe', new_recipe_path, class: "food_btn" %>
   <% @recipes.each do |recipe| %>
     <article>
+      <%= link_to recipe do %>
       <h2><%= recipe.name %></h2>
+      <% end %>
       <p><%= recipe.description %></p>
       <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
     </article>
