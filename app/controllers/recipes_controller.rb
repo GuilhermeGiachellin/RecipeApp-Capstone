@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
 
   def public_recipes
     @recipe = Recipe.all.where(public: true)
-  end  
+  end
 
   # GET /recipes/1/edit
   def edit; end
