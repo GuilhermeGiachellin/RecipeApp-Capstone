@@ -1,6 +1,7 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[ show edit update destroy ]
   before_action :set_recipe, only: %i[new edit update destroy]
+  before_action :set_foods, only: %i[new edit]
 
   # GET /recipe_foods or /recipe_foods.json
   def index
@@ -14,12 +15,10 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
-    @foods = Food.where(user_id: current_user.id)
   end
 
   # GET /recipe_foods/1/edit
   def edit
-    @foods = Food.where(user_id: current_user.id)
   end
 
   # POST /recipe_foods or /recipe_foods.json
@@ -68,6 +67,10 @@ class RecipeFoodsController < ApplicationController
 
     def set_recipe
       @recipe = Recipe.find(params[:recipe_id])
+    end
+
+    def set_foods
+      @foods = Food.where(user_id: current_user.id)
     end
 
     # Only allow a list of trusted parameters through.
