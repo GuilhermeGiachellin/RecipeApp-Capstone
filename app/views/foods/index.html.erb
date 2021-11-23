@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registered Foods</h1>
+<div class="food_cnt">
+<%= link_to 'New Food', new_food_path, class: "food_btn" %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Measurament unit</th>
+      <th>Price</th>
+      <th>Action</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurament_unit %></td>
+        <td><%= food.price %></td>         
+        <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "food_btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+
