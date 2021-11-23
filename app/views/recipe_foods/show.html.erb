@@ -15,5 +15,5 @@
   <%= @recipe_food.food_id %>
 </p>
 
-<%= link_to 'Edit', edit_recipe_food_path(@recipe_food) %> |
-<%= link_to 'Back', recipe_foods_path %>
+<%= link_to 'Edit', edit_recipe_recipe_food_path(params[:recipe_id],@recipe_food) %> |
+<%= link_to 'Back', :back %>

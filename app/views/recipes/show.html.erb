@@ -18,7 +18,7 @@
     <%= @recipe.public %>
   </p>
   <%= link_to 'Generate shopping list', recipes_path %>
-  <%= link_to 'Add ingredient', recipes_path %>
+  <%= link_to 'Add ingredient',   new_recipe_recipe_food_path(@recipe) %>
 
   <br>
 
@@ -36,11 +36,8 @@
         <td>Idk</td>
         <td>Idk</td>
       </tr>
-
-
-    
+    <% end %>
   </table>
-
 </section>
 
 
