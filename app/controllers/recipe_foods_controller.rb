@@ -27,10 +27,7 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.recipe_id = params[:recipe_id]
-    p params[:quantity]
-    p params[:food_id]
-    p params[:recipe_id]
-
+    
     respond_to do |format|
       if @recipe_food.save
         format.html { redirect_to recipe_recipe_food_path(params[:recipe_id],@recipe_food), notice: "Recipe food was successfully created." }

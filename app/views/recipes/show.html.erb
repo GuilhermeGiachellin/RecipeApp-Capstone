@@ -29,12 +29,12 @@
       <th>Value</th>
       <th>Action</th>
     </tr>
-    <% @foods.each do |food| %>
+    <% @foods.each do |recipe_food| %>
       <tr>
-        <td><%= food.name %></td>
-        <td>Idk</td>
-        <td>Idk</td>
-        <td>Idk</td>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %> <%= recipe_food.food.measurament_unit %></td>
+        <td><%= recipe_food.food.price %></td>
+        <td><%= link_to 'Edit', edit_recipe_recipe_food_path(params[:id],recipe_food) %> <%= link_to 'Destroy', recipe_recipe_food_path(params[:id],recipe_food), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </table>
