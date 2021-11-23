@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  margin-top: 2vh;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  height: 4vh;
+}
+
+.food_btn {
+  padding: 0.5vh;
+  background-color: #ccc;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.food_cnt {
+  width: 50%;
+  margin: auto;
+}
