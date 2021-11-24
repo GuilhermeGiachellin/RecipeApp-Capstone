@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
 
   def recipe_price
     price = 0
-    recipe_foods.each do |recipe_food|
+    recipe_foods.includes([:food]).each do |recipe_food|
       price += (recipe_food.quantity * recipe_food.food.price)
     end
     price
