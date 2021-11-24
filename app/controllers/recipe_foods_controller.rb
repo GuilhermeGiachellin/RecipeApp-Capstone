@@ -48,7 +48,7 @@ class RecipeFoodsController < ApplicationController
   # PATCH/PUT /recipe_foods/1 or /recipe_foods/1.json
   def update
     respond_to do |format|
-      if @recipe_food.update(recipe_food_params)
+      if @recipe_food.update(recipe_food_params2)
         format.html { redirect_to @recipe, notice: 'Recipe food was successfully updated.' }
         format.json { render :show, status: :ok, location: recipe_recipe_food_path(@recipe, @recipe_food) }
       else
@@ -85,5 +85,9 @@ class RecipeFoodsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def recipe_food_params
     params.require(:recipe_food).permit(:quantity, :food_id)
+  end
+
+  def recipe_food_params2
+    params.require(:recipe_food).permit(:quantity)
   end
 end
