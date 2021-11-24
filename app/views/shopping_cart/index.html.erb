@@ -1,0 +1,23 @@
+<h2>Shopping Cart</h2>
+
+<p>Amount of food items to buy: <%= @foods.count %></p>
+<p>Total value of needed: <%= total_value_needed(@foods) %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>          
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.amount_food %></td>
+        <td><%= food.amount_food * food.price %></td>        
+      </tr>
+     <% end %> 
+  </tbody>
+</table>
