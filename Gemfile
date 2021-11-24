@@ -7,6 +7,10 @@ gem 'cancancan'
 
 gem 'rubocop'
 
+gem 'ruby-growl', '~> 4.1'
+
+gem 'xmpp4r'
+
 gem 'bullet', group: 'development'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
