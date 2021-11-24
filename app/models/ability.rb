@@ -2,19 +2,19 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-
     can :manage, Recipe
     cannot :destroy, Recipe
     cannot :update, Recipe
     cannot :create, Recipe
 
-      return unless user.present?
-        can :read, Food
-        can [:create, :destroy], Food, user: user
-        can [:read], Recipe
-        can [:create, :update, :destroy], Recipe, user: user
-        can [:create, :update, :destroy], RecipeFood
-        can :read, :all
+    return unless user.present?
+
+    can :read, Food
+    can %i[create destroy], Food, user: user
+    can [:read], Recipe
+    can %i[create update destroy], Recipe, user: user
+    can %i[create update destroy], RecipeFood
+    can :read, :all
 
     #
     # The first argument to `can` is the action you are giving the user
