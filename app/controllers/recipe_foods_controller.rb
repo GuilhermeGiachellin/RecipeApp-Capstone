@@ -21,8 +21,11 @@ class RecipeFoodsController < ApplicationController
   def edit; end
 
   # POST /recipe_foods or /recipe_foods.json
-  def create 
-    unless already_recipe?
+  def create
+    if already_recipe?
+      flash[:notice] = 'This food already exits in the recipe'
+      redirect_to @recipe
+    else
       @recipe_food = RecipeFood.new(recipe_food_params)
       @recipe_food.recipe_id = params[:recipe_id]
 
@@ -35,9 +38,6 @@ class RecipeFoodsController < ApplicationController
           format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
         end
       end
-    else
-      flash[:notice] = 'This food already exits in the recipe'
-      redirect_to @recipe
     end
   end
 
