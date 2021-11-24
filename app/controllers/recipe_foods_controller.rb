@@ -14,25 +14,35 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
+    @recipe_foods = @recipe.recipe_foods.count
   end
 
   # GET /recipe_foods/1/edit
   def edit; end
 
   # POST /recipe_foods or /recipe_foods.json
-  def create
-    @recipe_food = RecipeFood.new(recipe_food_params)
-    @recipe_food.recipe_id = params[:recipe_id]
+  def create 
+    unless already_recipe?
+      @recipe_food = RecipeFood.new(recipe_food_params)
+      @recipe_food.recipe_id = params[:recipe_id]
 
-    respond_to do |format|
-      if @recipe_food.save
-        format.html { redirect_to @recipe, notice: 'Recipe food was successfully created.' }
-        format.json { render :show, status: :created, location: recipe_recipe_food_path(@recipe, @recipe_food) }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @recipe_food.save
+          format.html { redirect_to @recipe, notice: 'Recipe food was successfully created.' }
+          format.json { render :show, status: :created, location: recipe_recipe_food_path(@recipe, @recipe_food) }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      flash[:notice] = 'This food already exits in the recipe'
+      redirect_to @recipe
     end
+  end
+
+  def already_recipe?
+    RecipeFood.where(recipe_id: @recipe.id, food_id: params['recipe_food'][:food_id]).exists?
   end
 
   # PATCH/PUT /recipe_foods/1 or /recipe_foods/1.json
