@@ -17,8 +17,12 @@
       <tr>
         <td><%= food.name %></td>
         <td><%= food.measurament_unit %></td>
-        <td><%= food.price %></td>         
+        <td><%= food.price %></td>    
+        <% if user_signed_in? %>
+          <% if  can? :destroy, food %>     
         <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "food_btn" %></td>
+        <%end%>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
