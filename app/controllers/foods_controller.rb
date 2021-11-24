@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource :food
   before_action :set_food, only: %i[show edit update destroy]
 
   # GET /foods or /foods.json
@@ -20,7 +21,7 @@ class FoodsController < ApplicationController
   # POST /foods or /foods.json
   def create
     @food = Food.new(food_params)
-
+    @food.user_id = current_user.id
     respond_to do |format|
       if @food.save
         format.html { redirect_to @food, notice: 'Food was successfully created.' }

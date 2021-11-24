@@ -15,8 +15,8 @@
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.name %></td>
-        <td><%= food.amount_food %></td>
-        <td><%= food.amount_food * food.price %></td>        
+        <td><%= food.amount_food(@current_user) %></td>
+        <td><%= food.amount_food(@current_user) * food.price %></td>        
       </tr>
      <% end %> 
   </tbody>

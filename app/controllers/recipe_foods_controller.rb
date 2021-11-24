@@ -1,4 +1,5 @@
 class RecipeFoodsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_recipe_food, only: %i[show edit update destroy]
   before_action :set_recipe, only: %i[new edit create update destroy]
   before_action :set_foods, only: %i[new edit]
