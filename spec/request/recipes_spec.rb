@@ -20,12 +20,12 @@ RSpec.describe 'Recipes', type: :request do
     end
   end
 
-  describe 'GET #show' do
+  describe 'GET #recipe#show' do
     before { get recipe_path(@recipe) }
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
-    it "renders 'index' template" do
+    it "renders 'show' template" do
       expect(response).to render_template('show')
     end
     it 'have the right text' do

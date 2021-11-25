@@ -4,6 +4,8 @@ class Food < ApplicationRecord
   has_many :recipes, through: :recipe_foods
 
   validates_uniqueness_of :name
+  validates :name, :measurament_unit, :price, presence: true
+  validates :price, numericality: true
 
   def amount_food(current_user)
     value = 0
