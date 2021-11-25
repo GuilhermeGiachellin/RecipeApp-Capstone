@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :foods, dependent: :destroy
 
   validates_uniqueness_of :name, :email
+  validates :name, :email, presence: true
+  validates :password, :length => { :minimum => 8 }
 end
