@@ -22,7 +22,6 @@ RSpec.describe 'Blog App', type: :feature do
             expect(page).to have_content('Public Recipes')            
         end
 
-
         it 'expects to see click on recipe' do
             visit root_path
             click_link @recipe.name
