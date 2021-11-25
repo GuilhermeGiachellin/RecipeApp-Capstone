@@ -3,13 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Recipes', type: :request do
    
   before(:all) do
-        @user = User.new(name: 'Daddy', email: 'user1@gmail.com',
-                         password: 'password123', password_confirmation: 'password123' )
-        @user.save
-        @recipe = Recipe.new(user_id: @user.id, name: 'Recipe 1',
-                            description: 'This is a recipe',
-                            preparation_time: 1.5, cooking_time: 1, public: true)                
-        @recipe.save
+    @user = create(:user)
+    @recipe = create(:recipe, user_id: @user.id)
   end 
     
   describe 'GET #public_recipes' do 
@@ -34,7 +29,7 @@ RSpec.describe 'Recipes', type: :request do
       expect(response).to render_template('show')
     end
     it 'have the right text' do
-      expect(response.body).to include('Recipe 1')
+      expect(response.body).to include(@recipe.name)
     end
   end
   
