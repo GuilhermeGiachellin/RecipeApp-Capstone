@@ -24,8 +24,8 @@ class FoodsController < ApplicationController
     @food.user_id = current_user.id
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: 'Food was successfully created.' }
-        format.json { render :show, status: :created, location: @food }
+        format.html { redirect_to foods_path, notice: 'Food was successfully created.' }
+        format.json { render :show, status: :created, location: foods_path }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @food.errors, status: :unprocessable_entity }
@@ -37,8 +37,8 @@ class FoodsController < ApplicationController
   def update
     respond_to do |format|
       if @food.update(food_params)
-        format.html { redirect_to @food, notice: 'Food was successfully updated.' }
-        format.json { render :show, status: :ok, location: @food }
+        format.html { redirect_to foods_path, notice: 'Food was successfully updated.' }
+        format.json { render :show, status: :ok, location: foods_path }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @food.errors, status: :unprocessable_entity }
