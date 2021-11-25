@@ -13,7 +13,14 @@
  *= require_tree .
  *= require_self
  */
-
+ @import 'bootstrap/scss/bootstrap';
+ @import './foods.scss';
+ @import './recipe_foods.scss';
+ @import './recipes.scss';
+ @import './scaffolds.scss';
+ @import './shopping_cart.scss';
+ @import './users.scss';
+  
 * {
   text-decoration: none;
 }
