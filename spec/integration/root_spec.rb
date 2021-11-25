@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Blog App', type: :feature do
+RSpec.describe 'Root page', type: :feature do
     describe 'root page test' do
         before (:all) do
             @user = create(:user)

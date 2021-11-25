@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Blog App', type: :feature do
+RSpec.describe 'Login page', type: :feature do
     describe 'login test' do
         before (:all) do
             @user_login = create(:user)
