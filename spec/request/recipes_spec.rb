@@ -31,6 +31,5 @@ RSpec.describe 'Recipes', type: :request do
     it 'have the right text' do
       expect(response.body).to include(@recipe.name)
     end
-  end
-  
+  end  
 end
