@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<section class="container">
+  <p id="notice"><%= notice %></p>
 <section>
   <h2><%= @recipe.name %></h2>  
   <% if user_signed_in? %>
@@ -57,3 +58,5 @@
   </table>
 </section>
 <%= link_to 'Back', root_path %>
+
+</section>
