@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipes', type: :request do
-   
   before(:all) do
     @user = create(:user)
     @recipe = create(:recipe, user_id: @user.id)
-  end 
-    
-  describe 'GET #public_recipes' do 
+  end
+
+  describe 'GET #public_recipes' do
     before { get '/' }
     it 'is a success' do
       expect(response).to have_http_status(:ok)
@@ -31,5 +30,5 @@ RSpec.describe 'Recipes', type: :request do
     it 'have the right text' do
       expect(response.body).to include(@recipe.name)
     end
-  end  
+  end
 end
