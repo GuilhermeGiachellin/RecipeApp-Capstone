@@ -1,24 +1,41 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Recipe App - Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The RecipeApp is a website where users can keep track of the users recipes. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 
-Things you may want to cover:
+## :hammer: Built With
 
-* Ruby version
+- Ruby on Rails
+- Bootstrap
 
-* System dependencies
+To get a local copy up and running follow these simple steps:
 
-* Configuration
+1. Go to the [repository page](https://github.com/GuilhermeGiachellin/RecipeApp-Capstone).
+2. Clone it using git command `git clone https://github.com/GuilhermeGiachellin/RecipeApp-Capstone.git`.
+3. Run `bundle install` on your console.
+4. Run `yarn` on your console.
+5. To see the live preview run `rails s` in your console.
+6. To run the tests run the command `rspec` in your console.
 
-* Database creation
+## Authors
 
-* Database initialization
+👤 **ArthurGC**
 
-* How to run the test suite
+- GitHub: [@ArthurGC](https://github.com/ArthurGC)
+- Twitter: [@ArthurGC_22](https://twitter.com/ArthurGC_22)
+- LinkedIn: [alxguzmanc](https://www.linkedin.com/in/alxguzmanc/)
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **Guilherme Giachellin**
 
-* Deployment instructions
+- GitHub: [@GuilhermeGiachellin](https://github.com/GuilhermeGiachellin)
+- LinkedIn: [GuilhermeGiachellin](https://www.linkedin.com/in/guilherme-giachellin-2599771b9/)
 
-* ...
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/GuilhermeGiachellin/RecipeApp-Capstone/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
