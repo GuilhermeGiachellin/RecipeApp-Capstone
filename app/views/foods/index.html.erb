@@ -1,0 +1,33 @@
+<section class="container">
+<h1 class="page_titles">Registered Foods</h1>
+<div>
+<%= link_to 'New Food', new_food_path, class: "button" %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Measurament unit</th>
+      <th>Price</th>          
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurament_unit %></td>
+        <td>$<%= food.price %></td>    
+        <% if user_signed_in? %>
+          <% if  can? :destroy, food %>     
+        <td class="delete_ctn"><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></td>
+        <%end%>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+
+
+</section>

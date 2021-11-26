@@ -1,0 +1,18 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+<section>
+  <h1 class="page_titles">Recipes</h1>
+  <%= link_to 'New Recipe', new_recipe_path, class: "button" %>
+  <% @recipes.each do |recipe| %>
+    <article>
+    <div class="cnt_name">
+      <%= link_to recipe do %>      
+      <h2><%= recipe.name %></h2>      
+      <% end %>    
+       <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+      <p class="recipe_description">Description: <%= recipe.description %></p>     
+    </article>
+  <% end %>
+</section>
+</div>

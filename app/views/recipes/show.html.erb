@@ -1,0 +1,77 @@
+<section class="container">  
+<section class="recipe_show">
+  <div class="recipe-title-1">
+    <h2 class="page_titles"><%= @recipe.name %></h2>  
+    <% if user_signed_in? %>
+    <% if  can? :create, @recipe %>
+    <div class="recipe_info-1">
+      <p>Public:</p>
+      <%= link_to "/recipes/#{@recipe.id}/update_public", method: :post do %>
+        <label class="toggle">
+          <% if @recipe.public %>
+            <input type="checkbox" checked />
+          <% else %>
+            <input type="checkbox" />
+          <% end %>
+          <span class="slider round"></span>
+        </label>
+      <% end %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <% if  can? :create, @recipe %>
+      <%= link_to 'Edit', edit_recipe_path(@recipe.id), class:"button" %> |
+      <%= link_to 'Remove', recipe_path(@recipe.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"button" %>
+    <% end %>
+  <% end %>
+  <p class="recipe_info">
+    <strong>Preparation time:</strong>
+    <%= @recipe.preparation_time %>
+     hrs 
+  </p>
+  <p class="recipe_info">
+    <strong>Cooking time:</strong>
+    <%= @recipe.cooking_time %>
+     hrs
+  </p>
+  <p class="recipe_info">
+    <strong>Description:</strong>
+    <%= @recipe.description %>     
+  </p>
+
+  <% if user_signed_in? %>
+    <% if  can? :create, @recipe %>
+      <%= link_to 'Generate shopping list', shopping_cart_index_path, class:"button" %> |
+      <%= link_to 'Add ingredient',   new_recipe_recipe_food_path(@recipe), class:"button" %>
+    <% end %>
+  <% end %>
+  <br>
+
+  <table>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>      
+    </tr>
+    <% @foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %> <%= recipe_food.food.measurament_unit %></td>
+        <td>$<%= recipe_food.food.price * recipe_food.quantity %></td>
+        <% if user_signed_in? %>
+    <% if  can? :create, @recipe %>
+        <td class="delete_ctn">
+        <%= link_to 'Modify', edit_recipe_recipe_food_path(params[:id],recipe_food), class:"button" %> 
+        <%= link_to 'Remove', recipe_recipe_food_path(params[:id],recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class:"button" %>
+        </td>
+        <% end %>
+  <% end %>
+      </tr>
+    <% end %>
+  </table>
+</section>
+<%= link_to 'Back', root_path, class:"button" %>
+
+</section>

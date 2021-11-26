@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :foods
+  devise_for :users
+
+  root 'recipes#public_recipes'
+  resources :shopping_cart, only: %i[index]
+  resources :recipes do
+    resources :recipe_foods
+  end
+
+  post 'recipes/:id/update_public', to: 'recipes#update_public'
 end
