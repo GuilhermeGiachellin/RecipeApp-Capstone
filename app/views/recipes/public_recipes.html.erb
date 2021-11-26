@@ -1,16 +1,16 @@
 <section class="container">
-    <h1>Public Recipes</h1>
+    <h1 class="page_titles">Public Recipes</h1>
 <ul >
 <% @recipe.each do |r| %>
 <%= link_to r do %>
     <li class="public_list">
-    <div>
-    <%= r.name %>
-    <%= r.user.name %>    
+    <div class="list_content">
+    <p class="recipe_name"><%= r.name %></p>
+    <p class="user_name">By <%= r.user.name %></p>    
     </div>
-     <div>
-    <%= r.recipe_foods.count %>
-    <p>Price = <%= r.recipe_price %></p>
+     <div class="list_content">
+    <p> <%= r.recipe_foods.count %> Ingredients</p>
+    <p>Price: $<%= r.recipe_price %></p>
     </div>
     </li>
     <% end %>
