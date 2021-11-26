@@ -150,8 +150,7 @@ nav {
   color: white;
 }
 
-@media (max-width: 850px)
-{
+@media (max-width: 850px) {
   .nav_container {
     flex-direction: column;
   }
@@ -160,14 +159,10 @@ nav {
     width: 100%;
   }
 
-  td {
-    height: fit-content;
-  }
-
   .delete_ctn {
     display: flex;
-    flex-direction: column; 
-    width: 100%;   
+    flex-direction: column;
+    width: 100%;
   }
 
   .options_container {

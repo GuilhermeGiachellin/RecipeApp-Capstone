@@ -4,7 +4,7 @@
     <h2 class="page_titles"><%= @recipe.name %></h2>  
     <% if user_signed_in? %>
     <% if  can? :create, @recipe %>
-    <div class="recipe_info">
+    <div class="recipe_info-1">
       <p>Public:</p>
       <%= link_to "/recipes/#{@recipe.id}/update_public", method: :post do %>
         <label class="toggle">
