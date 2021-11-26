@@ -17,8 +17,8 @@ The RecipeApp is a website where users can keep track of the users recipes. It w
 1. Go to the [repository page](https://github.com/GuilhermeGiachellin/RecipeApp-Capstone).
 2. Clone it using git command `git clone https://github.com/GuilhermeGiachellin/RecipeApp-Capstone.git`.
 3. Run `bundle install` on your console.
-4. Run `yarn` on your console.
-5. To see the live preview run `rails s` in your console.
+4. Run `yarn install` on your console.
+5. To see the live preview run `rails s` in your console and go to `http://localhost:3000/` in your browser.
 6. To run the tests run the command `rspec` in your console.
 
 ## Authors
