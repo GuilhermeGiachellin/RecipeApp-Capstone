@@ -1,6 +1,25 @@
 <section class="container">  
 <section class="recipe_show">
-  <h2 class="page_titles"><%= @recipe.name %></h2>  
+  <div class="recipe-title-1">
+    <h2 class="page_titles"><%= @recipe.name %></h2>  
+    <% if user_signed_in? %>
+    <% if  can? :create, @recipe %>
+    <div class="recipe_info">
+      <p>Public:</p>
+      <%= link_to "/recipes/#{@recipe.id}/update_public", method: :post do %>
+        <label class="toggle">
+          <% if @recipe.public %>
+            <input type="checkbox" checked />
+          <% else %>
+            <input type="checkbox" />
+          <% end %>
+          <span class="slider round"></span>
+        </label>
+      <% end %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
   <% if user_signed_in? %>
     <% if  can? :create, @recipe %>
       <%= link_to 'Edit', edit_recipe_path(@recipe.id), class:"button" %> |
@@ -21,10 +40,7 @@
     <strong>Description:</strong>
     <%= @recipe.description %>     
   </p>
-  <p class="recipe_info">
-    <strong>Public:</strong>
-    <%= @recipe.public %>
-  </p>
+
   <% if user_signed_in? %>
     <% if  can? :create, @recipe %>
       <%= link_to 'Generate shopping list', shopping_cart_index_path, class:"button" %> |

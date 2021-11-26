@@ -6,6 +6,79 @@ p {
   margin: 0;
 }
 
+.recipe-title-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .recipe_info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+      margin: 0 0.5rem 0 0;
+      font-weight: bold;
+    }
+
+    .toggle {
+      position: relative;
+    }
+    
+    .toggle input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .toggle .onoff {
+      color: #fff;
+      font-size: 6em;
+      text-align: center;
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .slider {
+      position: relative;
+      display: block;
+      cursor: pointer;
+      background-color: #333;
+      transition: 0.4s;
+      width: 50px;
+      height: 20px;
+    }
+    
+    .slider:before {
+      content: "";
+      position: absolute;
+      height: 10px;
+      width: 25px;
+      background-color: #fff;
+      transition: 0.4s;
+      top: 5px;
+      left: 5px;
+    }
+    
+    input:checked + .slider {
+      background-color: #198754;
+      box-shadow: 0 0 3px #198754;
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(15px);
+    }
+    
+    .slider.round {
+      border-radius: 20px;
+    }
+    .slider.round::before {
+      border-radius: 20px;
+    }
+  }
+}
+
 .public_list {
   display: flex;
   flex-direction: row;
