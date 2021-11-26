@@ -3,6 +3,10 @@
 
 The RecipeApp is a website where users can keep track of the users recipes. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 
+## Image preview
+
+![image](https://user-images.githubusercontent.com/81584449/143597141-6965c51d-8ba8-4f0f-9174-8df1326b9384.png)
+
 ## :hammer: Built With
 
 - Ruby on Rails
