@@ -1,7 +1,8 @@
-<h2>Shopping Cart</h2>
+<section class="container">
+  <h2 class="page_titles">Shopping Cart</h2>
 
-<p>Amount of food items to buy: <%= @foods.count %></p>
-<p>Total value of needed: <%= total_value_needed(@foods) %></p>
+<p class="recipe_info">Amount of food items to buy: <%= @foods.count %></p>
+<p class="recipe_info">Total value: $<%= total_value_needed(@foods) %></p>
 
 <table>
   <thead>
@@ -16,8 +17,9 @@
       <tr>
         <td><%= food.name %></td>
         <td><%= food.amount_food(@current_user) %></td>
-        <td><%= food.amount_food(@current_user) * food.price %></td>        
+        <td>$<%= food.amount_food(@current_user) * food.price %></td>        
       </tr>
      <% end %> 
   </tbody>
 </table>
+</section>

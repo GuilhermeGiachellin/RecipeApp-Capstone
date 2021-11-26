@@ -1,3 +1,181 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+p {
+  margin: 0;
+}
+
+.recipe_info-1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.recipe-title-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    margin: 0 0.5rem 0 0;
+    font-weight: bold;
+  }
+
+  .toggle {
+    position: relative;
+  }
+
+  .toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle .onoff {
+    color: #fff;
+    font-size: 6em;
+    text-align: center;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .slider {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background-color: #333;
+    transition: 0.4s;
+    width: 50px;
+    height: 20px;
+  }
+
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 25px;
+    background-color: #fff;
+    transition: 0.4s;
+    top: 5px;
+    left: 5px;
+  }
+
+  input:checked + .slider {
+    background-color: #198754;
+    box-shadow: 0 0 3px #198754;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(15px);
+  }
+
+  .slider.round {
+    border-radius: 20px;
+  }
+
+  .slider.round::before {
+    border-radius: 20px;
+  }
+}
+
+.public_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  margin: 2vh 0;
+  min-height: 7vh;
+  background-color: #bebfc1;
+  color: black;
+}
+
+.public_list:hover {
+  background-color: #a7a8a8;
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.list_content {
+  display: flex;
+  flex-direction: column;
+  margin: 2vh 5%;
+}
+
+.recipe_name {
+  font-size: 1rem;
+}
+
+.user_name {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.actions {
+  margin-top: 5vh;
+  padding: 0;
+}
+
+.form-switch > label {
+  padding: 0;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+  background-color: #bebfc1;
+  color: black;
+  margin-top: 2vh;
+  align-items: center;
+}
+
+.cnt_name {
+  display: flex;
+  flex-direction: column;
+  margin: 2vh 5%;
+}
+
+h2 {
+  color: black;
+}
+
+.cnt_name > a:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.recipe_description {
+  width: 35%;
+  margin: 2vh 5%;
+}
+
+.recipe_info {
+  margin: 2vh 0;
+  font-size: 1.1em;
+}
+
+@media (max-width: 850px) {
+  .public_list {
+    flex-direction: column;
+  }
+
+  .list_content {
+    text-align: center;
+  }
+
+  article {
+    flex-direction: column;
+  }
+
+  .cnt_name > a {
+    text-align: center;
+  }
+
+  .recipe_description {
+    width: 90%;
+    text-align: center;
+  }
+}

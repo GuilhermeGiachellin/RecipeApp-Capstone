@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+    <%= form.label :quantity, class: "form-label" %>
+    <%= form.number_field :quantity, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :food_id, 'Food' %><br>
+  <div class="field">
+    <%= form.label :food_id, 'Food', class: "form-label" %><br>
     <% foods_array = @foods.map { |f| [f.name, f.id] } %>
-    <%= form.select(:food_id, options_for_select(foods_array)) %>
+    <%= form.select(:food_id, options_for_select(foods_array), {} ,{ class: 'form-control' }) %>
   </div>
 
   <div class="actions">

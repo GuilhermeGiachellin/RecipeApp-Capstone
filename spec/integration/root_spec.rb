@@ -14,7 +14,7 @@ RSpec.describe 'Root page', type: :feature do
 
     it 'expects to see price content' do
       visit root_path
-      expect(page).to have_content('Price =')
+      expect(page).to have_content('Price:')
     end
 
     it 'expects to see page title' do

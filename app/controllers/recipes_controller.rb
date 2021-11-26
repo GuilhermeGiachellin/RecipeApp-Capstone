@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   load_and_authorize_resource :recipe
-  before_action :set_recipe, only: %i[show edit update destroy]
+  before_action :set_recipe, only: %i[show edit update destroy update_public]
 
   # GET /recipes or /recipes.json
   def index
@@ -23,6 +23,12 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit; end
+
+  def update_public
+    @recipe.update(public: !@recipe.public)
+    flash[:notice] = "Your recipe is now #{@recipe.public ? 'public' : 'private'}"
+    redirect_back(fallback_location: root_path)
+  end
 
   # POST /recipes or /recipes.json
   def create
