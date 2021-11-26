@@ -37,6 +37,7 @@ user.save!
         cooking_time: Faker::Number.within(range: 1..5),
         description: Faker::Food.description,
         user_id: 1,
+        public: true,
     )
 end
 
@@ -47,6 +48,7 @@ end
         cooking_time: Faker::Number.within(range: 1..5),
         description: Faker::Food.description,
         user_id: 2,
+        public: true,
     )
 end
 
@@ -57,12 +59,13 @@ end
         cooking_time: Faker::Number.within(range: 1..5),
         description: Faker::Food.description,
         user_id: 3,
+        public: true,
     )
 end
   
 (1..20).each do |id|
     Food.create!(
-        name: Faker::Food.ingredient,
+        name: Faker::Name.name,
         measurament_unit: 'unit',
         price: Faker::Number.within(range: 1..20),
         user_id: rand(1..3),
