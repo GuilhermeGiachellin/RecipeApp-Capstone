@@ -1,5 +1,4 @@
-<section class="container">
-  <p id="notice"><%= notice %></p>
+<section class="container">  
 <section class="recipe_show">
   <h2 class="page_titles"><%= @recipe.name %></h2>  
   <% if user_signed_in? %>
@@ -28,7 +27,7 @@
   </p>
   <% if user_signed_in? %>
     <% if  can? :create, @recipe %>
-      <%= link_to 'Generate shopping list', shopping_cart_index_path, class:"button" %>
+      <%= link_to 'Generate shopping list', shopping_cart_index_path, class:"button" %> |
       <%= link_to 'Add ingredient',   new_recipe_recipe_food_path(@recipe), class:"button" %>
     <% end %>
   <% end %>
