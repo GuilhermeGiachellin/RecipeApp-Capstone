@@ -83,5 +83,25 @@ h2 {
   font-size: 1.1em;
 }
 
-// li:nth-child(even) {background-color: #CCC}
-// li:nth-child(odd) {background-color: black}
+@media (max-width: 850px) {
+  .public_list {
+    flex-direction: column;
+  }
+
+  .list_content {
+    text-align: center;
+  } 
+
+  article {
+      flex-direction: column;
+  }
+
+    .cnt_name > a {
+      text-align: center;
+  }
+
+  .recipe_description {
+      width: 90%;
+      text-align: center;
+  }
+}

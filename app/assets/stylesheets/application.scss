@@ -60,11 +60,11 @@ th {
   padding: 0 7px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
   background-color: black;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
   background-color: #bebfc1;
   color: black;
 }
@@ -148,4 +148,29 @@ nav {
 .actions > input:active {
   background-color: black;
   color: white;
+}
+
+@media (max-width: 850px)
+{
+  .nav_container {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  td {
+    height: fit-content;
+  }
+
+  .delete_ctn {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;   
+  }
+
+  .options_container {
+    justify-content: center;
+  }
 }
