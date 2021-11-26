@@ -15,8 +15,8 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
+require('@popperjs/core')
 require("channels")
 
 require('bootstrap')
 require("@fortawesome/fontawesome-free/js/all");
-require('./scripts')
