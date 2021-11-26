@@ -129,3 +129,23 @@ nav {
 .recipe_show {
   margin-bottom: 3vh;
 }
+
+.actions > input {
+  padding: 0.7vh;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  margin-bottom: 2vh;
+}
+
+.actions > input:hover {
+  background-color: #bebfc1;
+  color: white;
+  transition: 250ms;
+}
+
+.actions > input:active {
+  background-color: black;
+  color: white;
+}
