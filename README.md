@@ -12,7 +12,7 @@ The RecipeApp is a website where users can keep track of the users recipes. It w
 - Ruby on Rails
 - Bootstrap
 
-To get a local copy up and running follow these simple steps:
+## To get a local copy up and running follow these simple steps:
 
 1. Go to the [repository page](https://github.com/GuilhermeGiachellin/RecipeApp-Capstone).
 2. Clone it using git command `git clone https://github.com/GuilhermeGiachellin/RecipeApp-Capstone.git`.
